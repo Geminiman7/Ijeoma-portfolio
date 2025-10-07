@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}Writing - My Website{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Writing & Content</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <section class="writing">
+        <h2>Writing & Content</h2>
+
+        <!-- Creative Writing -->
+        <div class="writing-section">
+            <h3>Creative Writing</h3>
+            <div class="card-grid">
+                {% for item in creative %}
+                <div class="card">
+                    {% if item.image %}
+                        <img src="{{ url_for('static', filename=item.image) }}" alt="{{ item.title }}">
+                    {% endif %}
+                    <h4>{{ item.title }}</h4>
+                    <p>{{ item.description }}</p>
+                    {% if item.link %}
+                        <a href="{{ item.link }}" target="_blank">Read More</a>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Content Writing -->
+        <div class="writing-section">
+            <h3>Content Marketing & Writing</h3>
+            <div class="card-grid">
+                {% for item in content %}
+                <div class="card">
+                    {% if item.image %}
+                        <img src="{{ url_for('static', filename=item.image) }}" alt="{{ item.title }}">
+                    {% endif %}
+                    <h4>{{ item.title }}</h4>
+                    <p>{{ item.description }}</p>
+                    {% if item.link %}
+                        <a href="{{ item.link }}" target="_blank">See Work</a>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+{% endblock %}

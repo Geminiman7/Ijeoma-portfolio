@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - project </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+<section class="admin-form">
+    <h2>Edit Project</h2>
+    <form method="POST" enctype="multipart/form-data">
+        <label>Title:</label>
+        <input type="text" name="title" value="{{ project.title }}" required>
+
+        <label>Description:</label>
+        <textarea name="description" required>{{ project.description }}</textarea>
+
+        <label>Impact:</label>
+        <textarea name="impact">{{ project.impact }}</textarea>
+
+        <label>Image:</label>
+        {% if project.image %}
+            <img src="{{ url_for('static', filename=project.image) }}" alt="Current Image" width="120">
+        {% endif %}
+        <input type="file" name="image">
+
+        <button type="submit">Save Changes</button>
+    </form>
+    <a href="{{ url_for('admin_projects') }}">Back</a>
+</section>
+</body>
+</html>

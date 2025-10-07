@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Manage Content Writing</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+<section class="admin-list">
+    <h2>Manage Content Writing</h2>
+    <a href="{{ url_for('add_content_writing') }}" class="btn">+ Add New Content Writing</a>
+
+    <ul>
+        {% for item in writings %}
+        <li>
+            {% if item.image %}
+                <img src="{{ url_for('static', filename=item.image) }}" alt="{{ item.title }}" width="80">
+            {% endif %}
+            <div>
+                <strong>{{ item.title }}</strong><br>
+                <p>{{ item.description[:80] if item.description else '' }}...</p>
+                {% if item.link %}
+                    <a href="{{ item.link }}" target="_blank">Read More</a>
+                {% endif %}
+            </div>
+            <div class="actions">
+                <a href="{{ url_for('edit_content_writing', item_id=item.id) }}">Edit</a>
+                <form method="POST" action="{{ url_for('delete_content_writing', item_id=item.id) }}" style="display:inline;">
+                    <button type="submit" onclick="return confirm('Delete this item?')">Delete</button>
+                </form>
+            </div>
+        </li>
+        {% else %}
+        <p>No Content writing added yet.</p>
+        {% endfor %}
+    </ul>
+
+    <a href="{{ url_for('admin_dashboard') }}">Back to Dashboard</a>
+</section>
+</body>
+</html>

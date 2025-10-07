@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Add Media</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+<section class="admin-form">
+    <h2>Add Media</h2>
+    <form method="POST" enctype="multipart/form-data">
+        <label>Title:</label>
+        <input type="text" name="title" required>
+        
+        <label>Description:</label>
+        <textarea name="description" required></textarea>
+
+        <label>Video_url:</label>
+        <input type="url" name="video_url">
+
+        <label>thumbnail:</label>
+        <input type="file" name="thumbnail">
+
+        <button type="submit">Add Media</button>
+    </form>
+    <a href="{{ url_for('admin_media') }}">Back</a>
+</section>
+</body>
+</html>
