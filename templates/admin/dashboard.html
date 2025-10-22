@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - dashboard </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+<section class="dashboard">
+    <div class="dashboard-header">
+        <h2>Welcome Ijeoma</h2>
+        <p class="subtitle">Manage your portfolio content from one place</p>
+    </div>
+
+    <div class="dashboard-grid">
+        <a href="{{ url_for('admin_hero') }}" class="dashboard-card">
+            <i class="icon">🏠</i>
+            <span>Home (Hero Section)</span>
+        </a>
+
+        <a href="{{ url_for('admin_about') }}" class="dashboard-card">
+            <i class="icon">👩‍🎓</i>
+            <span>About Section</span>
+        </a>
+
+        <a href="{{ url_for('admin_projects') }}" class="dashboard-card">
+            <i class="icon">💡</i>
+            <span>Projects</span>
+        </a>
+
+        <a href="{{ url_for('admin_media') }}" class="dashboard-card">
+            <i class="icon">🎙️</i>
+            <span>Media</span>
+        </a>
+
+        <a href="{{ url_for('admin_creative_writing') }}" class="dashboard-card">
+            <i class="icon">✍️</i>
+            <span>Creative Writing</span>
+        </a>
+
+        <a href="{{ url_for('admin_content_writing') }}" class="dashboard-card">
+            <i class="icon">📰</i>
+            <span>Content Writing</span>
+        </a>
+
+        <a href="{{ url_for('admin_leadership') }}" class="dashboard-card">
+            <i class="icon">🎯</i>
+            <span>Leadership & Advocacy</span>
+        </a>
+
+        <a href="{{ url_for('admin_volunteering') }}" class="dashboard-card">
+            <i class="icon">🤝</i>
+            <span>Volunteering</span>
+        </a>
+
+        <!-- 📨 NEW: View Contact Messages -->
+        <a href="{{ url_for('admin_messages') }}" class="dashboard-card">
+            <i class="icon">📨</i>
+            <span>View Contact Messages</span>
+        </a>
+    </div>
+
+    <div class="logout-container">
+        <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
+    </div>
+ </section>
+<body>
+
+</html>

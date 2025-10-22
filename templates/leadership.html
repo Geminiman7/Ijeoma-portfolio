@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}Leadership - My Website{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leadership & Advocacy</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <section class="leadership">
+        <h2>Leadership & Advocacy</h2>
+
+        <!-- Leadership Roles -->
+        <div class="leadership-section">
+            <h3>Leadership Roles</h3>
+            <ul>
+                {% for role in leadership_roles %}
+                <li class="leadership-item">
+                    <strong>{{ role.role }}</strong> — {{ role.organization }} ({{ role.year }})<br>
+                    <p>{{ role.description }}</p>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <!-- Advocacy Work -->
+        <div class="advocacy-section">
+            <h3>Advocacy</h3>
+            <div class="card-grid">
+                {% for item in advocacy_items %}
+                <div class="card">
+                    {% if item.image %}
+                        <img src="{{ url_for('static', filename=item.image) }}" alt="{{ item.title }}">
+                    {% endif %}
+                    <h4>{{ item.title }}</h4>
+                    <p>{{ item.description }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
+{% endblock %}

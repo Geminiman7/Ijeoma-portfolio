@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}About - My Website{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - {{ about.bio[:20] }}...</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <!-- About Section -->
+    <section class="about">
+        <div class="about-container">
+           <img src="{{ url_for('static', filename=about.profile_image or 'images/default.jpg') }}" 
+                     alt="About Image" class="about-img">
+
+            <div class="about-text">
+                <h2>About Me</h2>
+                <p>{{ about.bio }}</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+{% endblock %}

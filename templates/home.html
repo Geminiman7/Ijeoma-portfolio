@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ijeoma Ntada</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+<!-- Hero Section -->
+    <nav class="navbar">
+  <div class="nav-container">
+    <a href="{{ url_for('home') }}" class="logo">Ijeoma</a>
+    
+    <input type="checkbox" id="menu-toggle" class="nav-toggle">
+    <label for="menu-toggle" class="hamburger">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </label>
+
+    <ul class="nav-links">
+     <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('writing') }}">Writing</a></li>
+                <li><a href="{{ url_for('leadership') }}">Leadership</a></li>
+                <li><a href="{{ url_for('projects') }}">Projects</a></li>
+                <li><a href="{{ url_for('media') }}">Media</a></li>
+                <li><a href="{{ url_for('volunteering') }}">Volunteering</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<section class="hero">
+    <img src="{{ url_for('static', filename=hero.image or 'images/default.jpg') }}" 
+         alt="Profile Picture" class="profile-img">
+
+    <div class="hero-text">
+        <h1>{{ hero.name }}</h1>
+        <p>{{ hero.intro }}</p>
+        
+    </div>
+</section>
+
+ <footer class="footer">
+  <div class="footer-container">
+    <p>© {{ 2025 }} Ijeoma Ntada — All Rights Reserved</p>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/share/1EjSGHLHbS/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/ijeoma_ntada?igsh=MWNweXpqcGNoa2h4Zg%3D%3D&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/ijeoma-anastasia-ntada?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="mailto:ijentada@gmail.com" style="text-decoration: none; color: inherit;" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+    </div>
+  </div>
+</footer>
+
+   <script src="https://kit.fontawesome.com/a2e0a6e6b6.js" crossorigin="anonymous"></script>
+
+   <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.querySelector('.nav-toggle');
+  const links = document.querySelector('.nav-links');
+  const bars = document.querySelectorAll('.bar');
+  
+  toggle.addEventListener('change', () => {
+    links.classList.toggle('open');
+    bars.forEach(bar => bar.classList.toggle('active'));
+  });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ijeoma-portfolio-6j4z.onrender.com//sitemap.xml
