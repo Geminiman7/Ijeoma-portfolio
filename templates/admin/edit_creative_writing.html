@@ -24,7 +24,7 @@
 
         <label>Image (optional):</label>
         {% if item.image %}
-            <img src="{{ url_for('static', filename=item.image) }}" alt="Current Image" width="120" style="display:block; margin:10px 0;">
+            <img src="{{ item.image }}" alt="Current Image" width="120" style="display:block; margin:10px 0;">
         {% endif %}
         <input type="file" name="image">
 
@@ -35,3 +35,4 @@
 </section>
 </body>
 </html>
+
