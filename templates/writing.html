@@ -23,7 +23,7 @@
                 {% for item in creative %}
                 <div class="card">
                     {% if item.image %}
-                        <img src="{{ url_for('static', filename=item.image) }}" alt="{{ item.title }}">
+                        <img src="{{item.image }}" alt="{{ item.title }}">
                     {% endif %}
                     <h4>{{ item.title }}</h4>
                     <p>{{ item.description }}</p>
@@ -56,4 +56,5 @@
     </section>
 </body>
 </html>
+
 {% endblock %}
