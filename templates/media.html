@@ -19,7 +19,7 @@
             {% for item in media_items %}
             <div class="card">
                 {% if item.thumbnail %}
-                    <img src="{{ url_for('static', filename=item.thumbnail) }}" alt="{{ item.title }}">
+                    <img src="{{ item.thumbnail}}" alt="{{ item.title }}">
                 {% endif %}
                 <h4>{{ item.title }}</h4>
                 <p>{{ item.description }}</p>
@@ -35,6 +35,7 @@
             {% endfor %}
         </div>
     </section>
+
 
 
 {% endblock %}
