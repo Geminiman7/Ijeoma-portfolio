@@ -17,7 +17,7 @@
         {% for item in writings %}
         <li>
             {% if item.image %}
-                <img src="{{ url_for('static', filename=item.image) }}" alt="{{ item.title }}" width="80">
+                <img src="{{ item.image}}" alt="{{ item.title }}" width="80">
             {% endif %}
             <div>
                 <strong>{{ item.title }}</strong><br>
@@ -42,3 +42,4 @@
 </section>
 </body>
 </html>
+
