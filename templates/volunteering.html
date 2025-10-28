@@ -21,7 +21,7 @@
             {% for item in volunteering_items %}
             <div class="timeline-item">
                 {% if item.image %}
-                    <img src="{{ url_for('static', filename=item.image) }}" alt="{{ item.organization }}">
+                    <img src="{{item.image}}" alt="{{ item.organization }}">
                 {% endif %}
                 <div class="timeline-content">
                     <h4>{{ item.organization }}</h4>
@@ -36,4 +36,5 @@
 
 
 </html>
+
 {% endblock %}
