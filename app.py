@@ -8,7 +8,7 @@ from flask_migrate import Migrate
 app = Flask(__name__)
 app.secret_key = "supersecretkey"  
 # Config
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///portfolio.db'
+app.config['SQLALCHEMY_DATABASE_URI'] =os.environ.get('DATABASE_URL')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
@@ -835,5 +835,6 @@ def sitemap():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
 
 
