@@ -8,7 +8,7 @@ from flask_migrate import Migrate
 app = Flask(__name__)
 app.secret_key = "supersecretkey"  
 # Config
-app.config['SQLALCHEMY_DATABASE_URI'] =os.environ.get('DATABASE_URL')
+app.config['SQLALCHEMY_DATABASE_URI'] ='postgresql://neondb_owner:npg_mGgT2XhON4Al@ep-red-block-a4ds0axu-pooler.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
@@ -835,6 +835,7 @@ def sitemap():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
 
 
 
