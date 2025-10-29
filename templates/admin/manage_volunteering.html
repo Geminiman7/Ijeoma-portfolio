@@ -17,7 +17,7 @@
         {% for v in volunteering %}
         <li>
             {% if v.image %}
-                <img src="{{ url_for('static', filename=v.image) }}" alt="{{ v.organization }}" width="80">
+                <img src="{{ v.image }}" alt="{{ v.organization }}" width="80">
             {% endif %}
             <div>
                 <strong>{{ v.organization }}</strong>
@@ -42,3 +42,4 @@
 </section>
 </body>
 </html>
+
