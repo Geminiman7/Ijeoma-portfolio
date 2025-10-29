@@ -17,7 +17,7 @@
         {% for project in projects %}
         <li>
             {% if project.image %}
-                <img src="{{ url_for('static', filename=project.image) }}" alt="{{ project.title }}" width="100">
+                <img src="{{ project.image }}" alt="{{ project.title }}" width="100">
             {% endif %}
             <strong>{{ project.title }}</strong> - {{ project.description[:60] }}...
             {% if project.impact %}
@@ -43,3 +43,4 @@
 </section>
 </body>
 </html>
+
