@@ -17,7 +17,7 @@
         {% for item in media %}
         <li>
             {% if item.thumbnail %}
-                <img src="{{ url_for('static', filename=item.thumbnail or 'images/default.jpg') }}" alt="{{ item.title }}" class="media-img">
+                <img src="{{ item.thumbnail  }}" alt="{{ item.title }}" class="media-img">
 
             {% endif %}
             <strong>{{ item.title }}</strong> -
@@ -38,3 +38,4 @@
 </section>
 </body>
 </html>
+
